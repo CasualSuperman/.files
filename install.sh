@@ -9,5 +9,5 @@ mv ~/.config/git ~/.gitconfig
 
 for i in ~/.config/bash/*;
 do
-	mv $i "~/."$(basename $i)
+	mv $i "$HOME/."$(basename $i)
 done
