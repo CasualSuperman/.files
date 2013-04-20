@@ -1,0 +1,34 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+shopt -s checkwinsize
+shopt -s histappend
+shopt -s cdspell
+
+export HISTSIZE=10000
+export HISTIGNORE=ignorespace:ignoredups:exit:history
+
+[[ -f "$HOME/.alias" ]] && . ~/.alias
+[[ -f "$HOME/.alias_color" ]] && . ~/.alias_color
+[[ -d "$HOME/.scripts" ]] && PATH="${PATH}:~/.scripts"
+[[ -d "$HOME/.builtin" ]] && for file in ~/.builtin/*; do source $file; done;
+
+PS1='\[\033[0;35m\]\u@\h\[\033[0;34m\] \w \$\[\033[00m\] '
+
+export EDITOR=vim
+GOPATH=/home/rwertman/go
+PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+PATH=/home/rwertman/Nexus_7/gcc/linux-x86/toolchain/arm-eabi-4.4.3/bin:$PATH
+PATH=/opt/android-sdk/platform-tools/:$PATH
+export GOPATH
+export PATH
+
+export XZ_DEFAULTS="-T 2"
+
+complete -W "$(echo $(grep '^ssh ' ~/.bash_history | sort -u | sed 's/^ssh //'))" ssh
+
+alias ls='ls --color=auto'
