@@ -1,0 +1,37 @@
+# Set Background
+#
+sh ~/.fehbg &
+
+# Desktop Compositing
+#
+xcompmgr &
+
+# Throw mpd to the background
+# jupiter &
+mpd ~/.mpd/mpd.conf
+#sonata &
+
+# Layout desktops
+#
+obsetlayout 0 2 2 0 &
+
+# Taskbar
+#
+tint2 &
+
+# Power management
+#
+# jupiter &
+#sudo /etc/rc.local 2>&1 1>/dev/null &
+
+# Dropbox
+#
+#dropboxd &
+
+# Volume mixer
+#
+pnmixer &
+
+# Notification daemon
+#
+conky &

@@ -1,0 +1,48 @@
+# Conky Metro Clock by Satya #
+# satya164.deviantart.com #
+
+# Conky settings #
+background no
+update_interval 1
+update_interval_on_battery 2
+
+override_utf8_locale yes
+
+double_buffer yes
+no_buffers yes
+
+# Window specifications #
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+
+border_inner_margin 0
+border_outer_margin 20
+
+alignment br
+gap_x 10
+gap_y 40
+
+# Graphics settings #
+draw_shades no
+draw_outline yes
+draw_borders no
+draw_graph_borders no
+
+# Text settings #
+use_xft yes
+xftalpha 1
+text_buffer_size 2048
+uppercase no
+
+# mpd settings #
+mpd_port 6615
+
+default_color FFFFFF
+default_outline_color FFFFFF
+draw_outline no
+
+TEXT
+#${voffset 10}${font Maven Pro:bold:size=20}${time %I:%M %p}${font}${voffset -10}
+${voffset 10}${font Maven Pro:size=40}${time %A}, ${time %B} ${time %e}${font}${voffset -10}
