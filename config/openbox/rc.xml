@@ -30,7 +30,7 @@
     <center>yes</center>
     <!-- whether to place windows in the center of the free area found or
        the top left corner -->
-    <monitor>Active</monitor>
+    <monitor>Primary</monitor>
     <!-- with Smart placement on a multi-monitor system, try to place new windows
        on: 'Any' - any monitor, 'Mouse' - where the mouse is, 'Active' - where
        the active window is, 'Primary' - only on the primary monitor -->
@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>flat-arch-dark</name>
+    <name>Siva Flat Darkest</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -57,21 +57,21 @@
     <keepBorder>yes</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
-      <name>sans</name>
+      <name>Sans</name>
       <size>8</size>
       <!-- font size in points -->
-      <weight>bold</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveWindow">
-      <name>sans</name>
+      <name>Sans</name>
       <size>8</size>
       <!-- font size in points -->
-      <weight>bold</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuHeader">
@@ -123,12 +123,9 @@
     <number>4</number>
     <firstdesk>1</firstdesk>
     <names>
-      <name>Web</name>
-      <name>Console</name>
-      <name>Chat</name>
-      <name>Other</name>
+      <name>(Unnamed desktop)</name>
     </names>
-    <popupTime>500</popupTime>
+    <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
        desktops.  Set this to 0 to disable the popup. -->
   </desktops>
@@ -159,19 +156,19 @@
     <right>0</right>
   </margins>
   <dock>
-    <position>BottomRight</position>
+    <position>Bottom</position>
     <!-- (Top|Bottom)(Left|Right|)|Top|Bottom|Left|Right|Floating -->
     <floatingX>0</floatingX>
-    <floatingY>19</floatingY>
+    <floatingY>0</floatingY>
     <noStrut>no</noStrut>
     <stacking>Above</stacking>
     <!-- 'Above', 'Normal', or 'Below' -->
     <direction>Horizontal</direction>
     <!-- 'Vertical' or 'Horizontal' -->
-    <autoHide>yes</autoHide>
-    <hideDelay>700</hideDelay>
+    <autoHide>no</autoHide>
+    <hideDelay>300</hideDelay>
     <!-- in milliseconds (1000 = 1 second) -->
-    <showDelay>500</showDelay>
+    <showDelay>300</showDelay>
     <!-- in milliseconds (1000 = 1 second) -->
     <moveButton>Middle</moveButton>
     <!-- 'Left', 'Middle', 'Right' -->
@@ -412,7 +409,7 @@
     </keybind>
     <keybind key="C-S-Escape">
       <action name="Execute">
-        <command>/home/rwertman/.scripts/urxvtc -name htop -e htop</command>
+        <command>terminator -m -b -T htop -e htop</command>
       </action>
     </keybind>
     <keybind key="W-e">
@@ -448,6 +445,16 @@
     <keybind key="XF86AudioMute">
       <action name="Execute">
         <command>amixer set Master toggle</command>
+      </action>
+    </keybind>
+    <!-- Keybindings for running applications -->
+    <keybind key="W-e">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>Konqueror</name>
+        </startupnotify>
+        <command>kfmclient openProfile filemanagement</command>
       </action>
     </keybind>
   </keyboard>
@@ -800,31 +807,6 @@
   <!-- show the manage desktops section in the client-list-(combined-)menu -->
 </menu>
   <applications>
-    <application name="urxvtq">
-      <decor>no</decor>
-      <position force="yes">
-        <x>center</x>
-        <y>0</y>
-      </position>
-      <desktop>all</desktop>
-      <layer>above</layer>
-      <skip_pager>yes</skip_pager>
-      <skip_taskbar>yes</skip_taskbar>
-      <maximized>Horizontal</maximized>
-    </application>
-    <application class="Google-chrome">
-      <desktop>1</desktop>
-      <maximized>true</maximized>
-    </application>
-    <application name="minti">
-      <maximized>true</maximized>
-    </application>
-    <application name="irc">
-      <maximized>true</maximized>
-    </application>
-    <application name="htop">
-      <maximized>true</maximized>
-    </application>
     <!--
   # this is an example with comments through out. use these to make your
   # own rules, but without the comments of course.
