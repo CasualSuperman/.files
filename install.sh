@@ -5,3 +5,9 @@ mv ~/.config/conkyrc ~/.conkyrc
 mv ~/.config/tmux.conf ~/.tmux.conf
 mv ~/.config/vimrc ~/.vimrc
 mv ~/.config/bashrc ~/.bashrc
+mv ~/.config/git ~/.gitconfig
+
+for i in ~/.config/bash/*;
+do
+	echo $i
+done

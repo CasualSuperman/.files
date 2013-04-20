@@ -1,0 +1,7 @@
+alias ls='ls -F --group-directories-first'
+alias ll='ls -l'
+alias la='ls -a'
+alias urxvt='urxvtc'
+alias temps='sensors | grep -Po "(?<=Core \\d:).+(?=\\()" | sed -e "s:^\s*::"'
+alias ..='cd ..'
+alias wcu='sudo netctl start wcu'
